@@ -20,7 +20,7 @@ public class Problem_2 {
 		@Override
 		public String toString() {
 			return "ListNode [val=" + val + ", next=" + next + "]";
-		}
+		} 
 
 	}
 
