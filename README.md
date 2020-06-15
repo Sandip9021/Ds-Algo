@@ -15,3 +15,5 @@ DS Algo and leetcode  related problems
 | 28   |  Implement strStr()     | 
 | 19   |  Remove Nth Node From End of List     | 
 | 29   |  Divide Two Integers     | 
+| 14   | Longest Common Prefix     | 
+
