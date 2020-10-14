@@ -1,6 +1,5 @@
 package LeetCodeProblems;
 
-import java.util.Comparator;
 import java.util.PriorityQueue;
 
 public class Problem1046_LastStoneWeight {
@@ -12,28 +11,20 @@ public class Problem1046_LastStoneWeight {
 	}
 
 	public static int lastStoneWeight(int[] stones) {
-		int len = stones.length;
-		PriorityQueue<Integer> maxHeap = new PriorityQueue<Integer>(len, new Comparator<Integer>() {
-			@Override
-			public int compare(Integer a, Integer b) {
-				return b - a;
-			}
-		});
+		PriorityQueue<Integer> maxHeap = new PriorityQueue<>((a, b)-> b - a);
 
-		for (int i = 0; i < stones.length; i++) {
-			maxHeap.add(stones[i]);
+		for (int stone : stones) {
+			maxHeap.add(stone);
 		}
 
 		while (maxHeap.size() > 1) {
 			int y = maxHeap.poll();
 			int x = maxHeap.poll();
-			if(x==y) {
-				continue;
-			}else {
+			if(y!= x) {
 				maxHeap.add(y-x);
 			}		
 		}
-		if(maxHeap.size()==1) {
+		if(maxHeap.size() == 1) {
 			return maxHeap.peek();
 		}else {
 			return 0;
