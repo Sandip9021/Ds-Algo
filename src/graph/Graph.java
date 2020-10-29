@@ -41,6 +41,30 @@ public class Graph {
 	}		
 	}
 	
+	public void DFS(int s) {
+		boolean visited[] = new boolean[this.V];
+		Stack<Integer> stack= new Stack<>();
+		
+		stack.push(s);
+		
+		while(!stack.empty()) {
+			s= stack.peek();
+			stack.pop();
+			
+			if(!visited[s]) {
+			   System.out.print(s+"  ");
+			   visited[s] = true;
+			}
+			
+			LinkedList<Integer> el= al[s];
+			for(Integer i : el) {
+				 if(!visited[i]) {
+					  stack.push(i);
+				 }
+			}
+		}
+	}
+	
 	public static void main(String[] args) {
 		Graph graph= new Graph(7);
 		
