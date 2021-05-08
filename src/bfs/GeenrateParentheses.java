@@ -1,4 +1,4 @@
-package dfsBackTracking;
+package bfs;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
