@@ -26,10 +26,10 @@ public class IslandPerimeter {
 	             count++;
 	             return;
 	        }
-	        if(grid[i][j]==3){
+	        if(grid[i][j]==3){   // checking if it is going towards same direction or not
 	            return;
 	        }
-	        grid[i][j]=3;
+	        grid[i][j]=3;  // 3 is used to mark the used cell , so that the call should not go to the same direction again
 	        dfs(i,j-1,grid);
 	        dfs(i,j+1,grid);
 	        dfs(i-1,j,grid);
